@@ -28,3 +28,13 @@ To clean:
 ```bash
 make clean
 ```
+
+# tutorials
+Visit this intro first:
+https://curc.readthedocs.io/en/latest/programming/OpenMP-C.html
+
+More in-depth:
+https://hpc-tutorials.llnl.gov/openmp/
+
+OpenMP references:
+https://www.openmp.org/resources/refguides/
