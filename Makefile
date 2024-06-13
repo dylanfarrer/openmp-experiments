@@ -8,12 +8,15 @@ CFLAGS = -I$(INCLUDE_DIR) -fopenmp -isysroot $(SDK_PATH)
 
 SOURCES = $(wildcard *.c)
 
-TARGETS = $(SOURCES:.c=)
+TARGETS = $(addprefix build/,$(SOURCES:.c=))
 
-all: $(TARGETS)
+all: build $(TARGETS)
 
-%: %.c
+build:
+	mkdir -p build
+
+build/%: %.c
 	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
-	rm -f $(TARGETS) $(wildcard *.o) $(wildcard *.out) $(wildcard *.dSYM)
+	rm -rf build
